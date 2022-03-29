@@ -27,5 +27,10 @@ namespace ControleDeContatos.Controllers
         {
             return View();
         }
+
+        public IActionResult Apagar()
+        {
+            return View();
+        }
     }
 }
