@@ -1,5 +1,7 @@
 ﻿using ControleDeContatos.Data;
 using ControleDeContatos.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ControleDeContatos.Repositorio
 {
@@ -12,6 +14,11 @@ namespace ControleDeContatos.Repositorio
                 _bancoContext = bancoContext;
         }
 
+        public List<ContatoModel> BucarTodos()
+        {
+            return _bancoContext.Contatos.ToList();
+        }
+
         public ContatoModel Adicionar(ContatoModel contato)
         {
             // gravar no banco de dados
@@ -20,5 +27,6 @@ namespace ControleDeContatos.Repositorio
 
             return contato;
         }
+
     }
 }
