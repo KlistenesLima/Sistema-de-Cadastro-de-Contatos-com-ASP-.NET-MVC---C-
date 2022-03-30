@@ -49,5 +49,17 @@ namespace ControleDeContatos.Repositorio
             return contatoDB;
 
         }
+
+        public bool Apagar(int id)
+        {
+            ContatoModel contatoDB = ListarPorId(id);
+
+            if (contatoDB == null) throw new System.Exception("Houve um erro na deleção do contato!");
+
+            _context.Contatos.Remove(contatoDB);
+            _context.SaveChanges();
+
+            return true;
+        }
     }
 }
